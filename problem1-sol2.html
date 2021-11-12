@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script language="javascript">
+      const set = { arr1: [3, 1, 7, 9], arr2: [2, 4, 1, 9, 3] };
+      console.log(set);
+      for (var sets in set) {
+        var ordre = true;
+        var sum1 = 0;
+        for (let i = 0; i < set.arr1.length; i++) {
+          var exist = false;
+          for (let j = 0; j < set.arr2.length; j++) {
+            if (set.arr1[i] == set.arr2[j]) {
+              exist = true;
+              break;
+            }
+          }
+          if (!exist) {
+            sum1 += set.arr1[i];
+          }
+        }
+        ordre = false;
+        if (!ordre) {
+          var sum2 = 0;
+          for (let j = 0; j < set.arr2.length; j++) {
+            var existe = false;
+            for (let i = 0; i < set.arr1.length; i++) {
+              if (set.arr2[j] == set.arr1[i]) {
+                existe = true;
+                break;
+              }
+            }
+            if (!existe) {
+              sum2 += set.arr2[j];
+            }
+          }
+        }
+        var sum = sum1 + sum2;
+      }
+      console.log(sum);
+    </script>
+  </body>
+</html>
